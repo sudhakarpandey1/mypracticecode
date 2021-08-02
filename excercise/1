@@ -1,0 +1,5 @@
+v_text=`cat file.txt`
+for i in $v_text
+do
+ echo ' $i'
+ done

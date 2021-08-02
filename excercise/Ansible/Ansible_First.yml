@@ -1,0 +1,12 @@
+---
+- name: first test playbook
+  hosts: localhost
+  gather_facts: false   
+  tasks:
+  - name: Creating a test file
+    shell: touch test-ansible.sh
+    register: test
+
+  - name: print variable
+    debug: 
+      msg: "{{ test }}"  

@@ -1,0 +1,26 @@
+---
+    - name: test ansible
+      shell: "{{ item }}"
+      with_items:
+        - "{{ shell }}"
+
+    - name: intalling packages
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - "{{ packages }}"
+
+    - name: Check that you can connect (GET) to a page and it returns a status 200
+      uri:
+        url: http://www.google.com
+      register: test
+
+    - name: printing output
+      debug:
+        msg: "{{ test.status }}"
+
+    - name: Copy a file
+      ansible.builtin.copy:
+        src: /mnt/d/excercise/test-ansible.sh
+        dest: /mnt/d/test-ansible.sh

@@ -1,0 +1,11 @@
+---
+- name: first test playbook
+  hosts: localhost   
+  tasks:
+  - name: Runninga a sheel script
+    ansible.builtin.script: ../usecase1.sh
+    register: test
+
+  - name: print variable
+    debug: 
+      msg: "{{ test }}"  

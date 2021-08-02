@@ -1,0 +1,8 @@
+---
+- name: Second test playbook
+  hosts: localhost
+  tasks:
+  - name: Copy a file
+    ansible.builtin.copy:
+       src: /mnt/d/excercise/test-ansible.sh
+       dest: /mnt/d/test-ansible.sh
